@@ -1,0 +1,41 @@
+body{
+    background-color: #292a2b !important;
+}
+
+.container {
+    padding: 3%;
+    
+}
+
+#title {
+    background-color: #292a2b;
+    color: aliceblue;
+}
+
+/* .navbar {
+    padding-left: 9%;
+} */
+
+h1{
+    color: aliceblue !important;
+    font-family: "inter", sans-serif;
+}
+h2{
+    color: aliceblue !important;
+    font-family: "Monserrat", sans-serif;
+}
+
+.navbar-brand {
+    font-family: "ubuntu";
+   
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Monserrat", sans-serif;
+}
