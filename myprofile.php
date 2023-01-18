@@ -34,40 +34,83 @@ $result = mysqli_query($conn, $sql);
 ?>
 
 <html>
-<head>
-  <title>My Profile | XYZ Corporation</title>
-  <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
-</head>
+  <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+		
+		<!-- Bootstrap CSS Link -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		
+		<!-- Custom CSS Links -->
+		<!-- <link rel="stylesheet" href="random.css"> -->
+		<!-- <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"> -->
+		<title>MANAGFI</title>
+	</head>
 <body>
-  <header>
-    <nav>
-      <h1>XYZ Corp.</h1>
-      <ul id="navli">
-        <li><a class="homeblack" href="eloginwel.php?id=<?php echo $id?>"">HOME</a></li>
-        <li><a class="homered" href="myprofile.php?id=<?php echo $id?>"">My Profile</a></li>
-        <li><a class="homeblack" href="empproject.php?id=<?php echo $id?>"">My Projects</a></li>
-        <li><a class="homeblack" href="applyleave.php?id=<?php echo $id?>"">Apply Leave</a></li>
-        <li><a class="homeblack" href="elogin.html">Log Out</a></li>
-      </ul>
-    </nav>
-  </header>
+		<!-- Navbar -->
+		<nav class="navbar navbar-light navbar-expand-md py-3">
+			<div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span style="font-weight: bold;">XYZ Corporation</span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+				<div id="navcol-2" class="collapse navbar-collapse" style="font-size: 17px;">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link active" href="eloginwel.php?id=<?php echo $id?>">Home</a></li>
+						<li class="nav-item"><a class="nav-link active" href="myprofile.php?id=<?php echo $id?>">My Profile</a></li>
+						<li class="nav-item"><a class="nav-link active" href="empproject.php?id=<?php echo $id?>">My Projects</a></li>
+						<li class="nav-item"><a class="nav-link active" href="applyleave.php?id=<?php echo $id?>">Apply Leave</a></li>
+					</ul><a class="btn btn-primary ms-md-2" role="button" href="alogin.html" style="padding-right: 18px;padding-left: 18px;font-size: 17px;">Logout</a>
+				</div>
+			</div>
+		</nav>
   
   <div class="divider"></div>
+
+  <section class="position-relative py-4 py-xl-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-5">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <div><img class="rounded-circle mb-3 fit-cover" src="process/<?php echo $pic;?>" width="130" height="130" /></div>
+                        <form class="text-center" method="POST" action="myprofileup.php?id=<?php echo $id?>">
+                            <div class="d-lg-flex justify-content-center justify-content-lg-center align-items-lg-center mb-3">
+                              <input class="form-control" type="text" value="<?php echo $firstname;?>" name="firstName" placeholder="First Name" required style="margin-top: 6px;margin-bottom: 5px;margin-right: 7px;" />
+                              <input class="form-control" type="text" name="lastName" value="<?php echo $lastname;?>" placeholder="Last Name" required />
+                            </div>
+                            <div class="d-lg-flex justify-content-center justify-content-lg-center align-items-lg-center mb-3">
+                              <input class="form-control" type="email" value="<?php echo $email;?>" name="email" placeholder="Email" required />
+                            </div>
+                            <div class="d-lg-flex justify-content-center justify-content-lg-center align-items-lg-center mb-3">
+                              <input class="form-control" name="birthday" value="<?php echo $birthday;?>" placeholder="First Name" required style="margin-top: 6px;margin-bottom: 5px;margin-right: 7px;" type="date" />
+                              <select class="form-select" value="<?php echo $gender;?>" name="gender" required>
+                                    <option value selected>Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                              </div>
+                            <div class="mb-3"><input class="form-control" type="number" value="<?php echo $contact;?>" name="contact" placeholder="Contact Number" required /></div>
+                            <div class="mb-3"><input class="form-control" type="number" value="<?php echo $nid;?>" name="nid" placeholder="NID" required /></div>
+                            <div class="mb-3"><input class="form-control" type="text" value="<?php echo $address;?>" name="address" placeholder="Address" required /></div>
+                            <div class="mb-3"><input class="form-control" type="text" value="<?php echo $dept;?>" name="dept" placeholder="Department" required /></div>
+                            <div class="mb-3"><input class="form-control" type="text" value="<?php echo $degree;?>" name="degree" placeholder="Degree" required /></div>
+                            <div class="mb-3"><input class="form-control" type="number" value="<?php echo $empS;?>" name="salary" placeholder="Salary" required /></div>
+                            <div class="mb-3"><input class="form-control" type="hidden" name="id" id="textField" value="<?php echo $id;?>" required /></div>
+                            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="send">Update</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
   
 
     <!-- <form id = "registration" action="edit.php" method="POST"> -->
-  <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+  <!-- <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>
@@ -160,7 +203,7 @@ $result = mysqli_query($conn, $sql);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
      <!-- Jquery JS-->
