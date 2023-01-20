@@ -56,7 +56,7 @@
 									<div class="text-start"><label class="form-label text-start" style="margin-bottom: 0px;">From</label><input class="form-control" name="start" placeholder="First Name" required style="margin-top: 6px;margin-bottom: 5px;margin-right: 7px;" type="date" /></div>
 									<div class="text-start"><label class="form-label text-start" style="margin-bottom: 0px;">To</label><input class="form-control" name="end" placeholder="First Name" required style="margin-top: 6px;margin-bottom: 5px;margin-right: 7px;" type="date" /></div>
 								</div>
-								<div class="mb-3"><input class="form-control" type="number" name="reason" placeholder="Reason" required /></div>
+								<div class="mb-3"><input class="form-control" type="text" name="reason" placeholder="Reason" required /></div>
 								<div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Submit</button></div>
 							</form>
 						</div>
