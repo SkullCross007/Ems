@@ -85,9 +85,29 @@ if ($result) {
     </div>
   </nav>
 
-
+  <section class="position-relative py-4 py-xl-5">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-5">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div><img class="rounded-circle mb-3 fit-cover" src="process/<?php echo $pic; ?>" width="130" height="130" /></div>
+              <form class="text-center" id="registration" action="myprofileup.php" method="POST">
+                <div class="mb-3"><input class="form-control" type="number" value="<?php echo $email; ?>" name="email" placeholder="Email" required /></div>
+                <div class="mb-3"><input class="form-control" type="number" value="<?php echo $contact; ?>" name="contact" placeholder="Contact" required /></div>
+                <div class="mb-3"><input class="form-control" type="text" value="<?php echo $address; ?>" name="address" placeholder="Address" required /></div>
+                <div class="mb-3"><input class="form-control" type="hidden" name="id" id="textField" value="<?php echo $id; ?>" required /></div>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="send">Update</button></div>
+              </form>
+              <button class="btn-outline-danger" onclick="window.location.href = 'changepassemp.php?id=<?php echo $id ?>';">Change Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- <form id = "registration" action="edit.php" method="POST"> -->
-  <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+  <!-- <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
     <div class="wrapper wrapper--w680">
       <div class="card card-1">
         <div class="card-heading"></div>
@@ -128,7 +148,7 @@ if ($result) {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 </body>
