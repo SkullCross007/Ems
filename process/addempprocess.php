@@ -13,6 +13,7 @@ $dept = $_POST['dept'];
 $degree = $_POST['degree'];
 $salary = $_POST['salary'];
 $birthday =$_POST['birthday'];
+$password =$_POST['password'];
 //echo "$birthday";
 $files = $_FILES['file'];
 $filename = $files['name'];
