@@ -93,13 +93,13 @@ if ($result) {
             <div class="card-body d-flex flex-column align-items-center">
               <div><img class="rounded-circle mb-3 fit-cover" src="process/<?php echo $pic; ?>" width="130" height="130" /></div>
               <form class="text-center" id="registration" action="myprofileup.php" method="POST">
-                <div class="mb-3"><input class="form-control" type="number" value="<?php echo $email; ?>" name="email" placeholder="Email" required /></div>
+                <div class="mb-3"><input class="form-control" type="email" value="<?php echo $email; ?>" name="email" placeholder="Email" required /></div>
                 <div class="mb-3"><input class="form-control" type="number" value="<?php echo $contact; ?>" name="contact" placeholder="Contact" required /></div>
                 <div class="mb-3"><input class="form-control" type="text" value="<?php echo $address; ?>" name="address" placeholder="Address" required /></div>
                 <div class="mb-3"><input class="form-control" type="hidden" name="id" id="textField" value="<?php echo $id; ?>" required /></div>
                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="send">Update</button></div>
               </form>
-              <button class="btn-outline-danger" onclick="window.location.href = 'changepassemp.php?id=<?php echo $id ?>';">Change Password</button>
+              <button class="btn btn-outline-danger" onclick="window.location.href = 'changepassemp.php?id=<?php echo $id ?>';">Change Password</button>
             </div>
           </div>
         </div>
