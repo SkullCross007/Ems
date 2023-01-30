@@ -28,7 +28,7 @@ if(in_array($filecheck, $fileextstored)){
     $destinationfile = 'images/'.$filename;
     move_uploaded_file($filetemp, $destinationfile);
 
-    $sql = "INSERT INTO `employee`(`id`, `firstName`, `lastName`, `email`, `password`, `birthday`, `gender`, `contact`, `nid`,  `address`, `dept`, `degree`, `pic`) VALUES ('','$firstname','$lastName','$email','1234','$birthday','$gender','$contact','$nid','$address','$dept','$degree','$destinationfile')";
+    $sql = "INSERT INTO `employee`(`id`, `firstName`, `lastName`, `email`, `password`, `birthday`, `gender`, `contact`, `nid`,  `address`, `dept`, `degree`, `pic`) VALUES ('','$firstname','$lastName','$email',$password,'$birthday','$gender','$contact','$nid','$address','$dept','$degree','$destinationfile')";
 
 $result = mysqli_query($conn, $sql);
 
